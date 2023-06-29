@@ -39,7 +39,7 @@ codeunit 50100 StringUtils
         consonants := 'bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZčšžČŠŽ';
         for i := 1 to StrLen(originalSentence) do begin
             if vowels.Contains(originalSentence[i]) then
-                vowelsCount := vowelsCount + 1;
+                vowelsCount := vowelsCount + 1; // Galima naudoti: vowelsCount += 1;
             if consonants.Contains(originalSentence[i]) then
                 consonantsCount := consonantsCount + 1;
         end;
