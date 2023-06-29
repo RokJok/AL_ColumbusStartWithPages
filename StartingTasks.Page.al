@@ -1,3 +1,7 @@
+// Bendrinio dizaino komentarų nesurašysiu, nes per daug laiko reikalauja ir tai labiau diskusijos klausimas.
+// Surašau tai ką matau ant akių.
+// Jei turėsi galimybę, pakalbėkime gyvai
+
 page 50101 StartingTasks
 {
     Caption = 'Starting tasks';
@@ -27,11 +31,15 @@ page 50101 StartingTasks
                 {
                     Caption = 'Output';
                     ToolTip = 'The reversed sentance of the original one';
+                    Editable = false; // kadangi čia tik rezultatas, tai verta nekoreguoti
                 }
             }
             group(Task2)
             {
                 Caption = 'Second task: find min and max';
+                // Nėra akivaizdi veiksmų seka. Suprantu, kad turi atskirą action masyvo sukūrimui.
+                // Skaitydamas kodą atseku, bet vien iš vaizdo neatsekčiau turbūt
+
                 field(MaxListSizeCtrl; listSize)
                 {
                     Caption = 'Size';
@@ -39,10 +47,10 @@ page 50101 StartingTasks
                     trigger OnValidate()
                     begin
                         if listSize < 1 then
-                            Error('List size can not be a negative number');
+                            Error('List size can not be a negative number'); // 0 nėra neigiamas skaičius :)
                     end;
                 }
-                field(MaxCtrl; IntUtils.GetMax())
+                field(MaxCtrl; IntUtils.GetMax()) // Labai įdomus įgyvendinimas
                 {
                     Caption = 'Max';
                     ToolTip = 'The highest number of the array';
@@ -147,6 +155,8 @@ page 50101 StartingTasks
             {
                 Caption = 'Find duplicates';
                 ToolTip = 'Finds duplicate numbers in the list with random values';
+                // Image actionams privalomas
+                Image = Find;
 
                 trigger OnAction()
                 begin
